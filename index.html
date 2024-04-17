@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web map</title>
+    <link rel="icon" type="image/x-icon" href="./favicon_io/favicon.ico">
+    <!--LOADING JAVASCRIPT API FROM ESRI-->
+    <link rel="stylesheet" href="https://js.arcgis.com/4.29/esri/themes/light/main.css">
+    <script src="https://js.arcgis.com/4.29/"></script>
+
+    <!--LOADING CALCITE DESIGN SYSTEM-->
+    <script type="module" src="https://js.arcgis.com/calcite-components/2.7.1/calcite.esm.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/calcite-components/2.7.1/calcite.css" />
+
+    <!--LINKING HTML,CSS,JS -->
+    <link rel="stylesheet" href="Style.css" />
+    <script src="main.js"> </script>
+</head>
+
+<body class="calcite-mode-light">
+
+    <calcite-shell>
+        <!-- HEADER -->
+        <calcite-navigation slot="header">
+            <calcite-action slot="navigation-action" compact>
+                <img src="JNEC-Logo-100x100-1(1).png" style="width:60px;height:60px;" alt="JNEC logo" >
+            </calcite-action>
+            <calcite-navigation-logo slot="logo" heading="My WebMap"
+                description="The thimphu is presenting infrastructure data"></calcite-navigation-logo>
+            <calcite-action slot="content-end" id="app-details-action" appearance="transparent" scale="m"
+                text="app details" icon="information"></calcite-action>
+
+        </calcite-navigation>
+        <!--LEFT PANEL-->
+        <calcite-shell-panel slot="panel-start">
+            <calcite-panel>
+                <calcite-block heading="Map legend" collapsible>
+                    <calcite-icon slot="icon" icon="legend"></calcite-icon>
+                    <div id="legend-container"></div>
+                </calcite-block>
+
+                <calcite-block heading="Layerlist" collapsible>
+                    <calcite-icon slot="icon" icon="layers"></calcite-icon>
+                    <div id="layerList-container"></div>
+                </calcite-block>
+
+
+            </calcite-panel>
+
+        </calcite-shell-panel>
+
+
+        <!--CENTER PANEL-->
+        <calcite-panel>
+            <div id="viewDiv"></div>
+        </calcite-panel>
+        <!-- APP DATA MODAL -->
+        <calcite-modal id="app-details-modal" >
+            <h3 slot="header">Welcome</h3>
+            <div slot="content">
+                <calcite-label>
+                    Thimphu (/tɪmˈpuː/; Dzongkha: ཐིམ་ཕུག [tʰim˥.pʰu˥]) is the capital and largest city of Bhutan. It is
+                    situated in the western central part of Bhutan, and the surrounding valley is one of Bhutan's
+                    dzongkhags, the Thimphu District. The ancient capital city of Punakha was replaced by Thimphu as
+                    capital in 1955, and in 1961 Thimphu was declared as the capital of the Kingdom of Bhutan by the 3rd
+                    Druk Gyalpo Jigme Dorji Wangchuck.
+                    <img src="../Data_Input/JNEC-Logo-100x100-1(1).png" style="width:60px;height:60px;" alt="JNEC logo">
+                    
+                </calcite-label>
+            </div>
+            <div slot="back">
+                <calcite-label layout="inline">
+                    Developed by Mim 
+                </calcite-label>
+            </div>
+        </calcite-modal>
+    </calcite-shell>
+    
+</body>
+
+</html>
